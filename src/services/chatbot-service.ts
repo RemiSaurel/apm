@@ -1,7 +1,7 @@
 import ky from "ky";
 
 const BASE_URL = 'https://api.openai.com/v1/chat/completions';
-const MODEL = 'gpt-3.5-turbo';
+const MODEL = 'gpt-4';
 const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
 const generateChat = async (prompt: string | null) => {
