@@ -9,7 +9,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color: black;
   background: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,7 +20,7 @@
 textarea {
   overflow: auto;
   outline: none;
-
+  background-color: #fff;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
