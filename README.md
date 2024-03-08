@@ -9,3 +9,4 @@ Créer un fichier `.env` contenant les différents éléments présents dans `en
 
 ## 🧑‍💻 Credits
 - [Rémi](https://github.com/RemiSaurel)
+- [Chaimae](https://github.com/lempichaimae)
