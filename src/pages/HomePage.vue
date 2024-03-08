@@ -10,10 +10,12 @@ const goTo = (path: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
-    <ClassicButton title="Sales" @click="goTo('Sales')"></ClassicButton>
-    <ClassicButton title="GenImage" @click="goTo('OpenAIImages')"></ClassicButton>
-    <ClassicButton title="ChatBot" @click="goTo('ChatBot')"></ClassicButton>
+  <div class="flex flex-col items-center">
+    <div class="flex flex-col gap-4">
+      <ClassicButton title="Sales" @click="goTo('Sales')"></ClassicButton>
+      <ClassicButton title="GenImage" @click="goTo('OpenAIImages')"></ClassicButton>
+      <ClassicButton title="ChatBot" @click="goTo('ChatBot')"></ClassicButton>
+    </div>
   </div>
 </template>
 

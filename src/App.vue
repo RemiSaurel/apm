@@ -7,7 +7,9 @@ onErrorCaptured((err, vm, info) => {
 </script>
 
 <template>
-  <router-view class="mx-24 mt-12"></router-view>
+  <div class="mx-24 mt-12">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style scoped>
