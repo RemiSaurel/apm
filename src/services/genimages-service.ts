@@ -6,7 +6,6 @@ const N = 1;
 const SIZE = '1024x1024';
 const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
-
 const generateImage = async (prompt: string) =>{
     return await ky.post(BASE_URL, {
         headers: {
