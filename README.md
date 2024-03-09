@@ -15,3 +15,4 @@ Si vous n'êtes pas contributeur, vous pouvez quand même le devenir ! Il suffit
 ## 🧑‍💻 Credits
 - [Rémi](https://github.com/RemiSaurel)
 - [Chaimae](https://github.com/lempichaimae)
+- [Yohan](https://github.com/y0hon)
