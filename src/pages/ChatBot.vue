@@ -1,31 +1,41 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import {chatBotService} from "../services/chatbot-service.ts";
-import ClassicButton from "../components/utils/ClassicButton.vue";
-import { AkCircleChevronUpFill } from "@kalimahapps/vue-icons";
+import {AkCircleChevronUpFill} from "@kalimahapps/vue-icons";
 import IconButton from "../components/utils/IconButton.vue";
-const currentPrompt = ref("");
+import {GPTModel} from "../models/chat-models.ts";
+
 interface Exchange {
   user: string;
   bot: string;
 }
 
+const currentPrompt = ref("");
+const model = ref("gpt-4" as GPTModel);
 const exchanges = ref([] as Exchange[]);
+
+
 const generate = async () => {
   exchanges.value.push({user: currentPrompt.value, bot: "Loading..."});
   const prompt = currentPrompt.value;
   currentPrompt.value = "";
-  const res = await chatBotService.generateChat(prompt);
+  const res = await chatBotService.generateChat(prompt, model.value);
   exchanges.value[exchanges.value.length - 1].bot = res.choices[0].message.content
 }
 </script>
 
 <template>
-  <div class="max-w-[1200px] m-auto">
+  <div class="max-w-[1000px] m-auto">
+    <div class="flex justify-end pr-4 pb-2">
+      <select v-model="model">
+        <option value="gpt-4">GPT-4</option>
+        <option value="gpt-3.5-turbo-0125">GPT-3.5</option>
+      </select>
+    </div>
     <div class="flex flex-col gap-2">
-      <div class="flex flex-col gap-4 exchanges overflow-y-auto bg-white rounded p-4">
+      <div class="flex flex-col gap-4 exchanges overflow-y-auto bg-white rounded px-4">
         <div v-for="exchange in exchanges" class="w-full">
-          <div class="text-right  mb-4 bg-neutral-300 rounded p-4 ">
+          <div class="text-right mb-4 bg-neutral-200 rounded p-4 ">
             {{exchange.user}}
           </div>
           <div class="text-white bg-neutral-800 rounded p-4">
